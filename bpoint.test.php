@@ -1,8 +1,7 @@
 <?php 
 
 require_once 'bpoint.php';
-
-require_once 'config.php'
+require_once 'config.php';
 
 $account = array(
     'username' => BPOINT_USERNAME,
