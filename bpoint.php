@@ -76,7 +76,55 @@ class Bpoint {
         return $this;
     }
 
+    /**
+     * Batch operations
+     */
 
+    public function downloadBatchByFilename($data){
+
+        // need to login for this one.
+        $this->login();
+
+        $this->successResultName = 'DownloadBatchByFilenameResult';
+        $data = array_merge($this->account, $data);
+        $this->result = $this->client->DownloadBatchByFilename($data);
+
+        return $this;
+
+    }
+
+    public function submitBatch($data){
+
+        // need to login for this one.
+        $this->login();
+
+        $this->successResultName = 'SubmitBatchResult';
+        $this->result = $this->client->SubmitBatch($data);
+
+        return $this;
+    }
+    
+
+    /**
+     * Session/Auth
+     */
+
+    public function login(){
+
+        $this->successResultName = 'LoginResult';
+        $this->result = $this->client->Login($this->account);
+
+        return $this;
+    }
+
+    public function logout(){
+
+        $this->successResultName = 'LogoutResult';
+        $this->result = $this->client->Logout($this->account);
+
+        return $this;
+    }
+    
 
     /**
      * Response helpers
