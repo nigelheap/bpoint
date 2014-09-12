@@ -154,6 +154,10 @@ class Bpoint {
 
     }
 
+    public function getRawResponse(){
+        return $this->result;
+    }
+
     /**
      * Helpers
      */

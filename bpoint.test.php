@@ -57,7 +57,7 @@ print_r($results);
 // 50,,1234,,,10000,0,,03/15,R,,,,,,,,512345...346,MC,0,172883047,46133083047,DECLINED,4,C57 
 // 99,3,10000,0
 // Headings and rows
-$headings = array('01','CBA-EVOLVE','20140816','033705','',1,5353109693075503);
+$headings = array('01','CBA-EVOLVE',date('Ymd'),date('His'),'',1,5353109693075503);
 $array = array(
   array(50, '', 1002147647, '', '', '10000', 0, 5999991829848912, 9900, 'R'),
   array(50, '', 1000340594, '', '', '10000', 0, 5999991834769467, 9900, 'R'),
@@ -88,7 +88,7 @@ $data = array(
 
 );
 
-$results = $bpoint->submitBatch($data)->getResponse();
+$results = $bpoint->submitBatch($data)->getRawResponse();
 
 var_dump($results);
 
